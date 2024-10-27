@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGA Her şey hakkında bilgiler.</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Custom CSS here */
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navigation bar -->
+    <nav class="bg-indigo-500 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="mr-4">
+                    <img src="aga.png" alt="AGA logo" class="h-8">
+                </div>
+                <div>
+                    <a href="#" class="font-bold text-lg">AGA</a>
+                </div>
+            </div>
+            <div class="hidden md:block">
+                <a href="#about" class="mx-4">About</a>
+                <a href="#features" class="mx-4">Features</a>
+                <a href="#" class="mx-4">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menuBtn" class="block text-3xl"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="bg-indigo-500 text-white py-2 text-center fixed w-full top-16 hidden">
+        <a href="#about" class="block py-2">About</a>
+        <a href="#features" class="block py-2">Features</a>
+        <a href="#" class="block py-2">Contact</a>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="container mx-auto py-8">
+        <div class="text-center">
+            <h1 class="text-4xl font-bold text-gray-800">Welcome to AGA</h1>
+            <p class="mt-4 text-lg">AGA Her şey hakkında bilgiler.</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="bg-white py-8">
+        <div class="container mx-auto">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-800">Our Features</h2>
+                <p class="mt-4 text-lg">Yaptığım oyunlara, modlara, haritalara ve yazılımlara burdan ulaşabilirsiniz. Youtube hesaplarıma da ulaşabilirsiniz.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('block');
+        });
+    </script>
+</body>
+
+</html>
