@@ -1,65 +1,201 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AGA</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Yenilenebilir Enerji Analizi - Ali Galip ALATLİ</title>
     <style>
-        /* Custom CSS here */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #27ae60;
+            --accent: #f39c12;
+            --light: #ecf0f1;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: #333;
+            background-color: #f4f7f6;
+        }
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        nav {
+            background: #34495e;
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            color: var(--accent);
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        section {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        section.active {
+            display: block;
+        }
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1466611653911-954ff21b6748?auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .card {
+            border-left: 5px solid var(--secondary);
+            background: #f9f9f9;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .math-box {
+            background: #e8f4ea;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .karlilik-tag {
+            display: inline-block;
+            padding: 5px 15px;
+            background: var(--accent);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
+<body>
 
-<body class="bg-gray-100">
-    <!-- Navigation bar -->
-    <nav class="bg-indigo-500 text-white p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center">
-                <div class="mr-4">
-                    <img src="aga.png" alt="AGA logo" class="h-20">
-                </div>
-                <div>
-                    <a href="#" class="font-bold text-lg">AGA</a>
-                </div>
-            </div>
-            <div class="hidden md:block">
-                <a href="#about" class="mx-4">About</a>
-                <a href="#features" class="mx-4">Features</a>
-                <a href="#" class="mx-4">Contact</a>
-            </div>
-            <div class="md:hidden">
-                <button id="menuBtn" class="block text-3xl"><i class="fas fa-bars"></i></button>
-            </div>
+<header>
+    <h1>Yenilenebilir Enerji Dönüşümünde Bölgesel Verimlilik</h1>
+    <p>Ali Galip ALATLİ | 9/D - 354</p>
+</header>
+
+<nav>
+    <a href="#" onclick="showSection('giris')">Giriş</a>
+    <a href="#" onclick="showSection('edirne')">Edirne</a>
+    <a href="#" onclick="showSection('maras')">Kahramanmaraş</a>
+    <a href="#" onclick="showSection('rize')">Rize</a>
+</nav>
+
+<div class="container">
+    <section id="giris" class="active">
+        <div class="hero">
+            <h2>Araştırmanın Amacı</h2>
+            <p>Bu çalışma, Türkiye'nin farklı iklim kuşaklarını temsil eden üç ilimizde 1.000.000 TL'lik bir sermayenin yenilenebilir enerji performansını doğrusal fonksiyonlarla (f(x) = ax + b) incelemektedir.</p>
         </div>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="bg-indigo-500 text-white py-2 text-center fixed w-full top-16 hidden">
-        <a href="#about" class="block py-2">About</a>
-        <a href="#features" class="block py-2">Features</a>
-        <a href="#" class="block py-2">Contact</a>
-    </div>
-
-    <!-- About Section -->
-    <section id="about" class="container mx-auto py-8">
-        <div class="text-center">
-            <h1 class="text-4xl font-bold text-gray-800">Welcome to AGA</h1>
-            <p class="mt-4 text-lg">Yaptığım oyunlara, modlara, haritalara, yazılımlara ve Youtube hesaplarıma burdan ulaşabilirsiniz.</p>
+        <h3>Yöntem ve Parametreler</h3>
+        <p>Proje kapsamında enerji birim fiyatı <strong>4,00 TL/kWh</strong> olarak sabitlenmiş, başlangıç maliyeti <strong>-1.000.000 TL</strong> olarak modele dahil edilmiştir. x değişkeni "gün sayısını" temsil etmektedir.</p>
+        <div class="card">
+            <h4>Kapasite Bilgileri:</h4>
+            <ul>
+                <li><strong>Güneş (GES):</strong> 25 kWp Kapasite</li>
+                <li><strong>Rüzgar (RES):</strong> 15 kW Kapasite</li>
+            </ul>
         </div>
     </section>
 
-    <!-- Features Section -->
+    <section id="edirne">
+        <h2>Edirne Enerji Analizi</h2>
+        <span class="karlilik-tag">En Karlı Seçenek: Hibrit Yatırım</span>
+        <p>Edirne, Balkanlar'dan gelen hava akımları ve dengeli güneşlenme süresiyle hibrit sistemler için idealdir.</p>
 
-    <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('block');
+        <div class="card">
+            <h4>Hibrit Yöntem İçin Gün Başına Kar Fonksiyonları:</h4>
+            <div class="math-box">Ocak-Rüzgar Enerjisi: f(x) = 720x - 1.000.000</div>
+            <div class="math-box">Nisan-Güneş Enerjisi: f(x) = 500x - 1.000.000</div>
+            <div class="math-box">Temmuz-Güneş Enerjisi: f(x) = 800x - 1.000.000</div>
+        </div>
+
+
+        <h3>Neden Edirne?</h3>
+        <p>Kışın güneş verimi düştüğünde rüzgarın devreye girmesi, yatırımın geri dönüş süresini mevsimsel dalgalanmalardan korur.</p>
+    </section>
+
+    <section id="maras">
+        <h2>Kahramanmaraş Enerji Analizi</h2>
+        <span class="karlilik-tag">En Karlı Seçenek: Güneş Enerjisi</span>
+        <p>Maraş, yüksek ışınım değerleri ve uzun güneşlenme süreleriyle güneş enerjisi için tam bir cazibe merkezidir.</p>
+        
+        <div class="card">
+            <h4>Güneş Enerjisi Gün Başına Kar Fonksiyonları:</h4>
+            <div class="math-box">Ocak: f(x) = 250x - 1.000.000</div>
+            <div class="math-box">Nisan: f(x) = 650x - 1.000.000</div>
+            <div class="math-box">Temmuz: f(x) = 950x - 1.000.000</div>
+        </div>
+
+        <h3>Neden Maraş?</h3>
+        <p>Güneş eğim katsayıları diğer illere göre çok yüksektir. 1.000.000 TL'lik borç, Temmuz ayındaki 950 TL/gün getirisi ile en hızlı burada sıfırlanır.</p>
+    </section>
+
+    <section id="rize">
+        <h2>Rize Enerji Analizi</h2>
+        <span class="karlilik-tag">En Karlı Seçenek: Rüzgar Enerjisi</span>
+        <p>Bulutluluk oranının en yüksek olduğu Rize'de, rüzgar enerjisi en karlı yöntem konumundadır.</p>
+
+        <div class="card">
+            <h4>Rüzgar Enerjisi Gün Başına Kar Fonksiyonları:</h4>
+            <div class="math-box">Ocak: f(x) = 600x - 1.000.000</div>
+            <div class="math-box">Nisan: f(x) = 420x - 1.000.000</div>
+            <div class="math-box">Temmuz: f(x) = 270x - 1.000.000</div>
+        </div>
+
+        <h3>Neden Rize?</h3>
+        <p>Ocak ayında rüzgarın getirisi (günlük 600 TL), güneşin getirisinden (günlük 80 TL) tam 7.5 kat daha fazladır. Bu bölgede karlılık rüzgar enerjisindedir.</p>
+    </section>
+</div>
+
+<footer>
+    <p>© 2026 Matematik Performans Ödevi | Validebağ Fen Lisesi</p>
+</footer>
+
+<script>
+    function showSection(sectionId) {
+        // Tüm sectionları gizle
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.remove('active');
         });
-    </script>
-</body>
+        // Seçilen sectionı göster
+        document.getElementById(sectionId).classList.add('active');
+    }
+</script>
 
+</body>
 </html>
